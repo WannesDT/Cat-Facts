@@ -12,8 +12,8 @@ interface FactDao {
     fun getAll(): Flow<List<DbFact>>
 
     @Insert
-    suspend fun insert(vararg dbStaff: DbFact)
+    suspend fun insert(vararg dbFact: DbFact)
 
     @Delete
-    suspend fun delete(dbStaff: DbFact)
+    suspend fun delete(dbFact: DbFact)
 }
