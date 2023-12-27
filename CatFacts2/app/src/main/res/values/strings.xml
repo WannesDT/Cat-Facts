@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Cat Facts</string>
+
+    <!--
+               TopAppBar Strings
+      -->
+    <string name="appbar_title">Cat Facts</string>
+
+    <!--
+         VisionBottomAppBar Strings
+-->
+    <string name="appbar_icon_home_description">ga naar Home</string>
+    <string name="appbar_icon_favorite_description">ga naar Favoriet</string>
+
+    <!--
+     FavoIcons
+-->
+    <string name="icon_delete_description">delete</string>
+    <string name="icon_favorite_description">favorite</string>
+
+    <!--
+ standard fact
+-->
+    <string name="fact_no_internet">Did you know, a cat lover needs an internet connection to look at cat facts! Connect to the internet and try again.</string>
+
+
+    <string name="saved_facts">Saved Facts</string>
+</resources>
