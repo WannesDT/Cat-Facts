@@ -2,6 +2,7 @@ package com.example.catfacts.ui.favorite
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -29,50 +30,56 @@ fun FavoritePage() {
     val favoriteFactViewModel: FavoriteFactViewModel = viewModel(factory = FavoriteFactViewModel.Factory)
     val uiState = favoriteFactViewModel.apiState
 
-    Text(
-        stringResource(id = R.string.saved_facts),
-        style = MaterialTheme.typography.titleMedium,
-    )
-    when (uiState) {
-        is FavoriteApiState.Loading -> {
-            Text(text = "Loading")
-        }
-        is FavoriteApiState.Success -> {
-            val factsList = favoriteFactViewModel.uiListState.collectAsState().value
+    Column {
+        Text(
+            stringResource(id = R.string.saved_facts),
+            style = MaterialTheme.typography.titleLarge,
+        )
+        when (uiState) {
+            is FavoriteApiState.Loading -> {
+                Text(text = "Loading")
+            }
 
-            if (factsList.isNotEmpty()) {
-                LazyColumn() {
-                    items(factsList) { fact ->
-                        ElevatedCard(
-                            modifier = Modifier
-                                .padding(10.dp)
-                                .fillMaxWidth()
-                                .wrapContentHeight()
-                                .background(MaterialTheme.colorScheme.surface),
-                            shape = MaterialTheme.shapes.medium,
-                            elevation = CardDefaults.cardElevation(
-                                defaultElevation = 5.dp,
-                            ),
+            is FavoriteApiState.Success -> {
+                val factsList = favoriteFactViewModel.uiListState.collectAsState().value
 
-                        ) {
-                            Text(
-                                text = fact.content,
+                if (factsList.isNotEmpty()) {
+                    LazyColumn() {
+                        items(factsList) { fact ->
+                            ElevatedCard(
                                 modifier = Modifier
-                                    .padding(10.dp),
-                            )
+                                    .padding(10.dp)
+                                    .fillMaxWidth()
+                                    .wrapContentHeight()
+                                    .background(MaterialTheme.colorScheme.surface),
+                                shape = MaterialTheme.shapes.medium,
+                                elevation = CardDefaults.cardElevation(
+                                    defaultElevation = 5.dp,
+                                ),
 
-                            Row(horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth()) {
-                                removeIcon { favoriteFactViewModel.removeFavorite(fact) }
+                            ) {
+                                Text(
+                                    text = fact.content,
+                                    modifier = Modifier
+                                        .padding(10.dp),
+                                )
+
+                                Row(
+                                    horizontalArrangement = Arrangement.End,
+                                    modifier = Modifier.fillMaxWidth(),
+                                ) {
+                                    removeIcon { favoriteFactViewModel.removeFavorite(fact) }
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        else -> {
-            Button(onClick = { favoriteFactViewModel.getFavoriteFacts() }) {
-                Text(text = "Reload")
+            else -> {
+                Button(onClick = { favoriteFactViewModel.getFavoriteFacts() }) {
+                    Text(text = "Reload")
+                }
             }
         }
     }
