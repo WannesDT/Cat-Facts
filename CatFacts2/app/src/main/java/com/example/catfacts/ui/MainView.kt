@@ -1,8 +1,6 @@
 package com.example.catfacts.ui
 
-import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -124,7 +122,6 @@ fun MainView(
         }
     }
 }
-
 
 enum class Destinations {
     Home,
