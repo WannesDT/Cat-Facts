@@ -1,12 +1,13 @@
 package com.example.catfacts
 
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTextInput
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.example.catfacts.ui.MainView
@@ -16,7 +17,6 @@ import org.junit.Rule
 import org.junit.Test
 
 class NavigationTest {
-    private val someTaskName: String = "some task name"
 
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -27,8 +27,24 @@ class NavigationTest {
         composeTestRule.setContent {
             navController = TestNavHostController(LocalContext.current)
             navController.navigatorProvider.addNavigator(ComposeNavigator())
-            MainView(navController = navController, navigationType = TaskNavigationType.BOTTOM_NAVIGATION)
+            MainView(
+                navController = navController,
+                navigationType = TaskNavigationType.BOTTOM_NAVIGATION,
+            )
         }
+    }
+
+    private fun goToHome() {
+        composeTestRule
+            .onNodeWithContentDescription("ga naar Home")
+            .performClick()
+    }
+
+    private fun goToFavorite() {
+        // R.string.appbar_icon_favorite_description
+        composeTestRule
+            .onNodeWithContentDescription("ga naar Favoriet")
+            .performClick()
     }
 
     @Test
@@ -40,41 +56,21 @@ class NavigationTest {
 
     @Test
     fun navigateToFavorites() {
-        // R.string.appbar_icon_favorite_description
+        goToFavorite()
         composeTestRule
-            .onNodeWithContentDescription("ga naar Favoriet")
-            .performClick()
-        composeTestRule
-            .onNodeWithText("About")
+            .onNodeWithText("Saved Facts")
             .assertIsDisplayed()
     }
 
+    @OptIn(ExperimentalTestApi::class)
     @Test
-    fun clickAddNextFact() {
+    fun addNextFactDisplayed() = run {
+        goToHome()
         composeTestRule
-            .onNodeWithContentDescription("Add")
-            .performClick()
-        composeTestRule
-            .onNodeWithText("taskname")
-            .assertIsDisplayed()
-        composeTestRule
-            .onNodeWithText("Save")
-            .assertIsDisplayed()
-    }
+            .waitUntilExactlyOneExists(hasText("next fact"))
 
-    @Test
-    fun canAddTask() {
         composeTestRule
-            .onNodeWithContentDescription("Add")
-            .performClick()
-        composeTestRule
-            .onNodeWithText("taskname")
-            .performTextInput(someTaskName)
-        composeTestRule
-            .onNodeWithText("Save")
-            .performClick()
-        composeTestRule
-            .onNodeWithText(someTaskName)
+            .onNodeWithText("next fact")
             .assertIsDisplayed()
     }
 }
