@@ -25,4 +25,7 @@
 
 
     <string name="saved_facts">Saved Facts</string>
+
+    <string name="get_fact">next fact</string>
+    <string name="loading">Loading…</string>
 </resources>

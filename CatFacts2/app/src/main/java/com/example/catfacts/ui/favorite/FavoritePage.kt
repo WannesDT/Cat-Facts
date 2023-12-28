@@ -24,7 +24,7 @@ fun FavoritePage() {
         )
         when (uiState) {
             is FavoriteApiState.Loading -> {
-                Text(text = "Loading")
+                Text(text = stringResource(id = R.string.loading))
             }
 
             is FavoriteApiState.Success -> {

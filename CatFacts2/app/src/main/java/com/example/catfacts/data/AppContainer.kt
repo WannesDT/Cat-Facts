@@ -3,8 +3,8 @@ package com.example.catfacts.data
 import android.content.Context
 import androidx.room.Room
 import com.example.catfacts.data.database.CatsDatabase
-import com.example.catfacts.network.facts.FactsApiService
 import com.example.catfacts.network.NetworkConnectionInterceptor
+import com.example.catfacts.network.facts.FactsApiService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -40,8 +40,6 @@ class DefaultAppContainer(applicationContext: Context) : AppContainer {
     private val factsApiService: FactsApiService by lazy {
         retrofit.create(FactsApiService::class.java)
     }
-
-
 
     private val catsDatabase: CatsDatabase by lazy {
         Room.databaseBuilder(

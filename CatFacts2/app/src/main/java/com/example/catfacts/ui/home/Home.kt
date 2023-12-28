@@ -63,7 +63,7 @@ private fun homeScreenContent() {
     ) {
         Image(
             painter = painterResource(id = R.drawable.olli_the_polite_cat),
-            contentDescription = "logo",
+            contentDescription = "image",
             contentScale = ContentScale.Crop,
             modifier = Modifier.clip(RoundedCornerShape(10.dp)),
         )
@@ -71,7 +71,7 @@ private fun homeScreenContent() {
     Column(modifier = Modifier.padding(end = 5.dp)) {
         when (uiState) {
             is FactApiState.Loading -> {
-                Text(text = "Loading")
+                Text(text = stringResource(id = R.string.loading))
             }
 
             is FactApiState.Success -> {
@@ -93,7 +93,7 @@ private fun homeScreenContent() {
                         }
                     }
                     Button(onClick = { factViewModel.getApiFact() }) {
-                        Text(text = "Get Fact")
+                        Text(text = stringResource(id = R.string.get_fact))
                     }
                 }
             }
@@ -105,7 +105,7 @@ private fun homeScreenContent() {
                 )
                 Row(horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth()) {
                     Button(onClick = { factViewModel.getApiFact() }) {
-                        Text(text = "Get Fact")
+                        Text(text = stringResource(id = R.string.get_fact))
                     }
                 }
             }

@@ -22,6 +22,7 @@ class FavoriteFactViewModel(
     private val factRepository: FactRepository,
 ) : ViewModel() {
 
+    private val TAG = "FavoriteFactViewModel"
     lateinit var uiListState: StateFlow<List<Fact>>
     var apiState: FavoriteApiState by mutableStateOf(FavoriteApiState.Loading)
         private set
@@ -34,7 +35,7 @@ class FavoriteFactViewModel(
             try {
                 factRepository.deleteFavoriteFact(fact)
             } catch (ex: Exception) {
-                Log.e("FactViewModel", ex.message.toString())
+                Log.e(TAG, ex.message.toString())
             }
         }
     }
@@ -50,7 +51,7 @@ class FavoriteFactViewModel(
                     )
                 FavoriteApiState.Success
             } catch (e: Exception) {
-                Log.e("FactViewModel", e.message.toString())
+                Log.e(TAG, e.message.toString())
                 FavoriteApiState.Error
             }
         }

@@ -5,6 +5,6 @@ import com.example.catfacts.network.facts.FactsApiService
 
 class FakeFactsApiService : FactsApiService {
     override suspend fun getFacts(): ApiFacts {
-        return FakeDataSource.tasks
+        return FakeDataSource.favoFacts
     }
 }

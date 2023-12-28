@@ -21,6 +21,7 @@ class FactViewModel(
     private val factRepository: FactRepository,
 ) : ViewModel() {
 
+    private val TAG = "FactViewModel"
     var apiState: FactApiState by mutableStateOf(FactApiState.Loading)
         private set
 
@@ -37,7 +38,7 @@ class FactViewModel(
                 isFavoriteState = true
                 factRepository.insertFavoriteFact(fact)
             } catch (ex: Exception) {
-                Log.e("FactViewModel", ex.message.toString())
+                Log.e(TAG, ex.message.toString())
             }
         }
     }
@@ -48,7 +49,7 @@ class FactViewModel(
                 isFavoriteState = false
                 factRepository.deleteFavoriteFact(fact)
             } catch (ex: Exception) {
-                Log.e("FactViewModel", ex.message.toString())
+                Log.e(TAG, ex.message.toString())
             }
         }
     }
@@ -61,7 +62,7 @@ class FactViewModel(
             } catch (ex: IOException) {
                 FactApiState.NoInternet
             } catch (e: Exception) {
-                Log.e("FactViewModel", e.message.toString())
+                Log.e(TAG, e.message.toString())
                 FactApiState.Error
             }
         }
