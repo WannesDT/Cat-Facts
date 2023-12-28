@@ -1,6 +1,6 @@
 package com.example.catfacts.data
 
-data class Fact(val content: String)
+data class Fact(val content: String, val isFavorite: Boolean = false)
 
 fun String.toFact(): Fact = Fact(content = this)
 

@@ -13,6 +13,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.catfacts.CatsApplication
 import com.example.catfacts.data.Fact
 import com.example.catfacts.data.FactRepository
+import com.example.catfacts.data.updated
 import com.example.catfacts.ui.states.FactApiState
 import kotlinx.coroutines.launch
 import okio.IOException
@@ -25,7 +26,7 @@ class FactViewModel(
     var apiState: FactApiState by mutableStateOf(FactApiState.Loading)
         private set
 
-    var isFavoriteState: Boolean by mutableStateOf(false)
+    var listOfFacts: List<Fact> by mutableStateOf(mutableListOf())
         private set
 
     init {
@@ -35,7 +36,7 @@ class FactViewModel(
     fun addFavorite(fact: Fact) {
         viewModelScope.launch {
             try {
-                isFavoriteState = true
+                listOfFacts = listOfFacts.updated(listOfFacts.indexOf(fact), Fact(fact.content, true))
                 factRepository.insertFavoriteFact(fact)
             } catch (ex: Exception) {
                 Log.e(TAG, ex.message.toString())
@@ -46,7 +47,7 @@ class FactViewModel(
     fun removeFavorite(fact: Fact) {
         viewModelScope.launch {
             try {
-                isFavoriteState = false
+                listOfFacts = listOfFacts.updated(listOfFacts.indexOf(fact), Fact(fact.content, false))
                 factRepository.deleteFavoriteFact(fact)
             } catch (ex: Exception) {
                 Log.e(TAG, ex.message.toString())
@@ -57,8 +58,9 @@ class FactViewModel(
     fun getApiFact() {
         viewModelScope.launch {
             apiState = try {
-                isFavoriteState = false
-                FactApiState.Success(factRepository.getRandomFact())
+                val fact = factRepository.getRandomFact()
+                listOfFacts += fact
+                FactApiState.Success
             } catch (ex: IOException) {
                 FactApiState.NoInternet
             } catch (e: Exception) {

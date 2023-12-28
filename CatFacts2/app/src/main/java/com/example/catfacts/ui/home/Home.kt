@@ -5,12 +5,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,8 +22,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.catfacts.R
-import com.example.catfacts.ui.shared.favoriteIcon
-import com.example.catfacts.ui.shared.unFavoriteIcon
 import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FactViewModel
 
@@ -75,23 +72,13 @@ private fun homeScreenContent() {
             }
 
             is FactApiState.Success -> {
-                val fact = uiState.fact
+                val listOfFacts = factViewModel.listOfFacts.reversed()
 
-                Text(
-                    text = fact.content,
-                    modifier = Modifier.weight(1f).verticalScroll(rememberScrollState()),
-                )
+                RandomFactList(listOfFacts = listOfFacts) { if (it.isFavorite) factViewModel.removeFavorite(it) else factViewModel.addFavorite(it) }
+
+                Spacer(Modifier.weight(1f))
 
                 Row(horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth()) {
-                    if (factViewModel.isFavoriteState) {
-                        unFavoriteIcon {
-                            factViewModel.removeFavorite(fact)
-                        }
-                    } else {
-                        favoriteIcon {
-                            factViewModel.addFavorite(fact)
-                        }
-                    }
                     Button(onClick = { factViewModel.getApiFact() }) {
                         Text(text = stringResource(id = R.string.get_fact))
                     }

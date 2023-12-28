@@ -12,7 +12,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.catfacts.CatsApplication
 import com.example.catfacts.data.Fact
 import com.example.catfacts.data.FactRepository
-import com.example.catfacts.ui.states.FavoriteApiState
+import com.example.catfacts.ui.states.FactApiState
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
@@ -24,7 +24,7 @@ class FavoriteFactViewModel(
 
     private val TAG = "FavoriteFactViewModel"
     lateinit var uiListState: StateFlow<List<Fact>>
-    var apiState: FavoriteApiState by mutableStateOf(FavoriteApiState.Loading)
+    var apiState: FactApiState by mutableStateOf(FactApiState.Loading)
         private set
     init {
         getFavoriteFacts()
@@ -49,10 +49,10 @@ class FavoriteFactViewModel(
                         started = SharingStarted.WhileSubscribed(5_000L),
                         initialValue = listOf(),
                     )
-                FavoriteApiState.Success
+                FactApiState.Success
             } catch (e: Exception) {
                 Log.e(TAG, e.message.toString())
-                FavoriteApiState.Error
+                FactApiState.Error
             }
         }
     }

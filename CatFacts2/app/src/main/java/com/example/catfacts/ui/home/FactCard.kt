@@ -1,4 +1,4 @@
-package com.example.catfacts.ui.favorite
+package com.example.catfacts.ui.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -10,10 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.catfacts.data.Fact
 import com.example.catfacts.ui.shared.CatElevatedCard
-import com.example.catfacts.ui.shared.removeIcon
+import com.example.catfacts.ui.shared.favoriteIcon
+import com.example.catfacts.ui.shared.unFavoriteIcon
 
 @Composable
-fun FavoriteCard(fact: Fact, onRemoveCLicked: (Fact) -> Unit) {
+fun FactCard(fact: Fact, onFavoriteClicked: (Fact) -> Unit) {
     CatElevatedCard {
         Text(
             text = fact.content,
@@ -25,7 +26,7 @@ fun FavoriteCard(fact: Fact, onRemoveCLicked: (Fact) -> Unit) {
             horizontalArrangement = Arrangement.End,
             modifier = Modifier.fillMaxWidth(),
         ) {
-            removeIcon { onRemoveCLicked(fact) }
+            if (fact.isFavorite)unFavoriteIcon { onFavoriteClicked(fact) } else favoriteIcon { onFavoriteClicked(fact) }
         }
     }
 }

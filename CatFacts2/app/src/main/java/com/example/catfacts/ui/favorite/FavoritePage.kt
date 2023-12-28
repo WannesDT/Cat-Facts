@@ -9,7 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.catfacts.R
-import com.example.catfacts.ui.states.FavoriteApiState
+import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FavoriteFactViewModel
 
 @Composable
@@ -23,12 +23,12 @@ fun FavoritePage() {
             style = MaterialTheme.typography.titleLarge,
         )
         when (uiState) {
-            is FavoriteApiState.Loading -> {
+            is FactApiState.Loading -> {
                 Text(text = stringResource(id = R.string.loading))
             }
 
-            is FavoriteApiState.Success -> {
-                val factsList = favoriteFactViewModel.uiListState.collectAsState().value
+            is FactApiState.Success -> {
+                val factsList = favoriteFactViewModel.uiListState.collectAsState().value.reversed()
 
                 if (factsList.isNotEmpty()) {
                     FavoriteList(factsList) { favoriteFactViewModel.removeFavorite(it) }

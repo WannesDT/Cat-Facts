@@ -4,7 +4,7 @@ import com.example.catfacts.data.Fact
 import com.example.catfacts.data.toFacts
 import com.example.catfacts.fake.FakeApiFactsRepository
 import com.example.catfacts.fake.FakeDataSource
-import com.example.catfacts.ui.states.FavoriteApiState
+import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FavoriteFactViewModel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
@@ -15,7 +15,7 @@ import org.junit.Test
 
 class FavoriteFactViewModelTest {
     private lateinit var viewModel: FavoriteFactViewModel
-    private lateinit var apiState: FavoriteApiState
+    private lateinit var apiState: FactApiState
     private lateinit var uiList: List<Fact>
 
     @get:Rule
@@ -29,7 +29,7 @@ class FavoriteFactViewModelTest {
 
         apiState = viewModel.apiState
         when (apiState) {
-            is FavoriteApiState.Success -> {
+            is FactApiState.Success -> {
                 uiList = viewModel.uiListState.first()
             }
             else -> { throw AssertionError() }
