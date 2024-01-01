@@ -12,6 +12,9 @@ import com.example.catfacts.R
 import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FavoriteFactViewModel
 
+/**
+ * Composable function to display the favorite facts page.
+ */
 @Composable
 fun FavoritePage() {
     val favoriteFactViewModel: FavoriteFactViewModel = viewModel(factory = FavoriteFactViewModel.Factory)

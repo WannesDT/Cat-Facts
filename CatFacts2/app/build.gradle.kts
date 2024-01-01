@@ -4,6 +4,9 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
     // ksp
     id("com.google.devtools.ksp")
+
+    // dokka
+    id("org.jetbrains.dokka")
 }
 
 android {
@@ -49,6 +52,9 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    tasks.dokkaHtml.configure {
+        outputDirectory.set(buildDir.resolve("dokka"))
     }
 }
 

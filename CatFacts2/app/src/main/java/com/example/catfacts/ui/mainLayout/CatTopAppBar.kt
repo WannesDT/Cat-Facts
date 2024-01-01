@@ -10,6 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.catfacts.R
 
+/**
+ * Composable function to display a custom TopAppBar
+ */
 @Composable
 fun CatTopAppBar() {
     Row(

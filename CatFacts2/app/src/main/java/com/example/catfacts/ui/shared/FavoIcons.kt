@@ -5,7 +5,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
@@ -14,8 +13,13 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.catfacts.R
 
+/**
+ * Composable function to display an IconButton with a delete icon.
+ *
+ * @param onClick The callback function triggered when the delete icon is clicked.
+ */
 @Composable
-fun removeIcon(onClick: () -> Unit) {
+fun RemoveIcon(onClick: () -> Unit) {
     IconButton(onClick = onClick) {
         Icon(
             Icons.Default.Delete,
@@ -25,8 +29,13 @@ fun removeIcon(onClick: () -> Unit) {
     }
 }
 
+/**
+ * Composable function to display an IconButton with an unfavorite icon.
+ *
+ * @param onClick The callback function triggered when the unfavorite icon is clicked.
+ */
 @Composable
-fun unFavoriteIcon(onClick: () -> Unit) {
+fun UnFavoriteIcon(onClick: () -> Unit) {
     IconButton(onClick = onClick) {
         Icon(
             Icons.Default.Favorite,
@@ -36,8 +45,13 @@ fun unFavoriteIcon(onClick: () -> Unit) {
     }
 }
 
+/**
+ * Composable function to display an IconButton with a favorite icon.
+ *
+ * @param onClick The callback function triggered when the favorite icon is clicked.
+ */
 @Composable
-fun favoriteIcon(onClick: () -> Unit) {
+fun FavoriteIcon(onClick: () -> Unit) {
     IconButton(onClick = onClick) {
         Icon(
             Icons.Default.FavoriteBorder,

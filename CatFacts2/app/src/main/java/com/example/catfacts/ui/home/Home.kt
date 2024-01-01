@@ -25,6 +25,9 @@ import com.example.catfacts.R
 import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FactViewModel
 
+/**
+ * Composable function to display the home screen.
+ */
 @Composable
 fun Home() {
     val orientation = LocalConfiguration.current.orientation
@@ -44,6 +47,10 @@ fun Home() {
     }
 }
 
+/**
+ * Composable function to display the content of the home screen.
+ *
+ */
 @Composable
 private fun homeScreenContent() {
     val factViewModel: FactViewModel = viewModel(factory = FactViewModel.Factory)

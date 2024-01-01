@@ -14,6 +14,9 @@ import com.example.catfacts.ui.MainView
 import com.example.catfacts.ui.theme.TestTheme
 import com.example.catfacts.ui.util.TaskNavigationType
 
+/**
+ * The main activity for the Cat Facts application.
+ */
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -10,8 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.catfacts.data.Fact
 import com.example.catfacts.ui.shared.CatElevatedCard
-import com.example.catfacts.ui.shared.removeIcon
+import com.example.catfacts.ui.shared.RemoveIcon
 
+/**
+ * Composable function to display a card for a favorite fact.
+ *
+ * @param fact The [Fact] instance representing the favorite fact to be displayed.
+ * @param onRemoveCLicked The callback function triggered when the remove icon is clicked.
+ */
 @Composable
 fun FavoriteCard(fact: Fact, onRemoveCLicked: (Fact) -> Unit) {
     CatElevatedCard {
@@ -25,7 +31,7 @@ fun FavoriteCard(fact: Fact, onRemoveCLicked: (Fact) -> Unit) {
             horizontalArrangement = Arrangement.End,
             modifier = Modifier.fillMaxWidth(),
         ) {
-            removeIcon { onRemoveCLicked(fact) }
+            RemoveIcon { onRemoveCLicked(fact) }
         }
     }
 }

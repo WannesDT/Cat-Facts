@@ -37,6 +37,7 @@ out/
 .gradle
 .gradle/
 build/
+!dokka
 
 # Signing files
 .signing/

@@ -17,6 +17,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.catfacts.R
 
+/**
+ * Composable function to display a custom BottomAppBar with icons for home and favorite pages.
+ *
+ * @param showHomePage The callback function triggered when the home icon is clicked.
+ * @param showFavoritePage The callback function triggered when the favorite icon is clicked.
+ */
 @Composable
 fun CatBottomAppBar(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
     BottomAppBar(

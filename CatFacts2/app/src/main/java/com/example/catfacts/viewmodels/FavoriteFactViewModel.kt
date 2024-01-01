@@ -18,18 +18,36 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for managing favorite facts and their states.
+ *
+ * @param factRepository The repository for fetching and managing favorite facts.
+ */
 class FavoriteFactViewModel(
     private val factRepository: FactRepository,
 ) : ViewModel() {
 
     private val TAG = "FavoriteFactViewModel"
+
+    /**
+     * StateFlow representing the list of favorite facts.
+     */
     lateinit var uiListState: StateFlow<List<Fact>>
+
+    /**
+     * Current state of the Favorite Fact ROOMdb response.
+     */
     var apiState: FactApiState by mutableStateOf(FactApiState.Loading)
         private set
     init {
         getFavoriteFacts()
     }
 
+    /**
+     * Removes a fact from the list of favorites and deletes it from the database.
+     *
+     * @param fact The fact to be removed from favorites.
+     */
     fun removeFavorite(fact: Fact) {
         viewModelScope.launch {
             try {
@@ -40,6 +58,9 @@ class FavoriteFactViewModel(
         }
     }
 
+    /**
+     * Fetches the list of favorite facts from the repository and updates the state accordingly.
+     */
     fun getFavoriteFacts() {
         viewModelScope.launch {
             apiState = try {
@@ -57,6 +78,9 @@ class FavoriteFactViewModel(
         }
     }
     companion object {
+        /**
+         * Factory for creating instances of [FavoriteFactViewModel].
+         */
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
                 val application = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as CatsApplication)

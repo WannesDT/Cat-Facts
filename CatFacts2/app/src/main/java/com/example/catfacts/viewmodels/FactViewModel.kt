@@ -18,14 +18,26 @@ import com.example.catfacts.ui.states.FactApiState
 import kotlinx.coroutines.launch
 import okio.IOException
 
+/**
+ * ViewModel for managing facts and their states.
+ *
+ * @param factRepository The repository for fetching and managing facts.
+ */
 class FactViewModel(
     private val factRepository: FactRepository,
 ) : ViewModel() {
 
     private val TAG = "FactViewModel"
+
+    /**
+     * Current state of the Fact API response.
+     */
     var apiState: FactApiState by mutableStateOf(FactApiState.Loading)
         private set
 
+    /**
+     * List of facts fetched from the API.
+     */
     var listOfFacts: List<Fact> by mutableStateOf(mutableListOf())
         private set
 
@@ -33,6 +45,11 @@ class FactViewModel(
         getApiFact()
     }
 
+    /**
+     * Adds a fact to the list of favorites and inserts it into the database.
+     *
+     * @param fact The fact to be added to favorites.
+     */
     fun addFavorite(fact: Fact) {
         viewModelScope.launch {
             try {
@@ -44,6 +61,11 @@ class FactViewModel(
         }
     }
 
+    /**
+     * Removes a fact from the list of favorites and deletes it from the database.
+     *
+     * @param fact The fact to be removed from favorites.
+     */
     fun removeFavorite(fact: Fact) {
         viewModelScope.launch {
             try {
@@ -55,6 +77,9 @@ class FactViewModel(
         }
     }
 
+    /**
+     * Fetches a fact from the API and updates the state accordingly.
+     */
     fun getApiFact() {
         viewModelScope.launch {
             apiState = try {
@@ -70,6 +95,9 @@ class FactViewModel(
         }
     }
     companion object {
+        /**
+         * Factory for creating instances of [FactViewModel].
+         */
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
                 val application = (this[APPLICATION_KEY] as CatsApplication)

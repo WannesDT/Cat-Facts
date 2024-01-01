@@ -11,6 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Composable function to display a custom ElevatedCard with specific styling.
+ *
+ * @param content The content to be displayed inside the elevated card.
+ */
 @Composable
 fun CatElevatedCard(content: @Composable () -> Unit) {
     ElevatedCard(

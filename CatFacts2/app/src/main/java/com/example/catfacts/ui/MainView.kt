@@ -26,6 +26,13 @@ import com.example.catfacts.ui.mainLayout.CatNavigationRail
 import com.example.catfacts.ui.mainLayout.CatTopAppBar
 import com.example.catfacts.ui.util.TaskNavigationType
 
+/**
+ * Composable function to display the main view based on the specified navigation type.
+ *
+ * @param navigationType The type of navigation to be used, e.g., [TaskNavigationType.BOTTOM_NAVIGATION] or
+ * [TaskNavigationType.NAVIGATION_RAIL].
+ * @param navController The NavHostController for navigating between destinations.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainView(
@@ -123,10 +130,21 @@ fun MainView(
     }
 }
 
+/**
+ * Enum class representing different destinations in the app.
+ */
 enum class Destinations {
     Home,
     Favorite,
 }
+
+/**
+ * Checks whether navigation is allowed to the specified destination based on the current back stack entry.
+ *
+ * @param current The current back stack entry.
+ * @param destination The destination to navigate to.
+ * @return True if navigation is allowed, false otherwise.
+ */
 private fun canNavigate(current: NavBackStackEntry?, destination: String): Boolean {
     val currentDest = current?.destination?.route
 

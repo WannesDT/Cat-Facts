@@ -10,9 +10,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.catfacts.data.Fact
 import com.example.catfacts.ui.shared.CatElevatedCard
-import com.example.catfacts.ui.shared.favoriteIcon
-import com.example.catfacts.ui.shared.unFavoriteIcon
+import com.example.catfacts.ui.shared.FavoriteIcon
+import com.example.catfacts.ui.shared.UnFavoriteIcon
 
+/**
+ * Composable function to display a card for a fact.
+ *
+ * @param fact The [Fact] instance representing the fact to be displayed.
+ * @param onFavoriteClicked The callback function triggered when the favorite/unfavorite icon is clicked.
+ */
 @Composable
 fun FactCard(fact: Fact, onFavoriteClicked: (Fact) -> Unit) {
     CatElevatedCard {
@@ -26,7 +32,7 @@ fun FactCard(fact: Fact, onFavoriteClicked: (Fact) -> Unit) {
             horizontalArrangement = Arrangement.End,
             modifier = Modifier.fillMaxWidth(),
         ) {
-            if (fact.isFavorite)unFavoriteIcon { onFavoriteClicked(fact) } else favoriteIcon { onFavoriteClicked(fact) }
+            if (fact.isFavorite)UnFavoriteIcon { onFavoriteClicked(fact) } else FavoriteIcon { onFavoriteClicked(fact) }
         }
     }
 }
