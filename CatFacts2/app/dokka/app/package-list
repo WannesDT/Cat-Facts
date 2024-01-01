@@ -1,0 +1,141 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.catfacts.data.database////PointingToDeclaration/app/com.example.catfacts.data.database/index.html
+$dokka.location:com.example.catfacts.data.database//asDbFact/com.example.catfacts.data.Fact#/PointingToDeclaration/app/com.example.catfacts.data.database/as-db-fact.html
+$dokka.location:com.example.catfacts.data.database//asDbFacts/kotlin.collections.List[com.example.catfacts.data.Fact]#/PointingToDeclaration/app/com.example.catfacts.data.database/as-db-facts.html
+$dokka.location:com.example.catfacts.data.database//asDomainFact/com.example.catfacts.data.database.DbFact#/PointingToDeclaration/app/com.example.catfacts.data.database/as-domain-fact.html
+$dokka.location:com.example.catfacts.data.database//asDomainFacts/kotlin.collections.List[com.example.catfacts.data.database.DbFact]#/PointingToDeclaration/app/com.example.catfacts.data.database/as-domain-facts.html
+$dokka.location:com.example.catfacts.data.database/CatsDatabase///PointingToDeclaration/app/com.example.catfacts.data.database/-cats-database/index.html
+$dokka.location:com.example.catfacts.data.database/CatsDatabase/CatsDatabase/#/PointingToDeclaration/app/com.example.catfacts.data.database/-cats-database/-cats-database.html
+$dokka.location:com.example.catfacts.data.database/CatsDatabase/factDao/#/PointingToDeclaration/app/com.example.catfacts.data.database/-cats-database/fact-dao.html
+$dokka.location:com.example.catfacts.data.database/DbFact///PointingToDeclaration/app/com.example.catfacts.data.database/-db-fact/index.html
+$dokka.location:com.example.catfacts.data.database/DbFact/DbFact/#kotlin.String/PointingToDeclaration/app/com.example.catfacts.data.database/-db-fact/-db-fact.html
+$dokka.location:com.example.catfacts.data.database/DbFact/content/#/PointingToDeclaration/app/com.example.catfacts.data.database/-db-fact/content.html
+$dokka.location:com.example.catfacts.data.database/FactDao///PointingToDeclaration/app/com.example.catfacts.data.database/-fact-dao/index.html
+$dokka.location:com.example.catfacts.data.database/FactDao/delete/#com.example.catfacts.data.database.DbFact/PointingToDeclaration/app/com.example.catfacts.data.database/-fact-dao/delete.html
+$dokka.location:com.example.catfacts.data.database/FactDao/getAll/#/PointingToDeclaration/app/com.example.catfacts.data.database/-fact-dao/get-all.html
+$dokka.location:com.example.catfacts.data.database/FactDao/insert/#kotlin.Array[com.example.catfacts.data.database.DbFact]/PointingToDeclaration/app/com.example.catfacts.data.database/-fact-dao/insert.html
+$dokka.location:com.example.catfacts.data////PointingToDeclaration/app/com.example.catfacts.data/index.html
+$dokka.location:com.example.catfacts.data//toFact/kotlin.String#/PointingToDeclaration/app/com.example.catfacts.data/to-fact.html
+$dokka.location:com.example.catfacts.data//toFacts/kotlin.collections.List[kotlin.String]#/PointingToDeclaration/app/com.example.catfacts.data/to-facts.html
+$dokka.location:com.example.catfacts.data//updated/kotlin.collections.Iterable[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/app/com.example.catfacts.data/updated.html
+$dokka.location:com.example.catfacts.data/AppContainer///PointingToDeclaration/app/com.example.catfacts.data/-app-container/index.html
+$dokka.location:com.example.catfacts.data/AppContainer/factRepository/#/PointingToDeclaration/app/com.example.catfacts.data/-app-container/fact-repository.html
+$dokka.location:com.example.catfacts.data/CashingFactRepository///PointingToDeclaration/app/com.example.catfacts.data/-cashing-fact-repository/index.html
+$dokka.location:com.example.catfacts.data/CashingFactRepository/CashingFactRepository/#com.example.catfacts.data.database.FactDao#com.example.catfacts.network.facts.FactsApiService#android.content.Context/PointingToDeclaration/app/com.example.catfacts.data/-cashing-fact-repository/-cashing-fact-repository.html
+$dokka.location:com.example.catfacts.data/CashingFactRepository/deleteFavoriteFact/#com.example.catfacts.data.Fact/PointingToDeclaration/app/com.example.catfacts.data/-cashing-fact-repository/delete-favorite-fact.html
+$dokka.location:com.example.catfacts.data/CashingFactRepository/getFavoriteFacts/#/PointingToDeclaration/app/com.example.catfacts.data/-cashing-fact-repository/get-favorite-facts.html
+$dokka.location:com.example.catfacts.data/CashingFactRepository/getRandomFact/#/PointingToDeclaration/app/com.example.catfacts.data/-cashing-fact-repository/get-random-fact.html
+$dokka.location:com.example.catfacts.data/CashingFactRepository/insertFavoriteFact/#com.example.catfacts.data.Fact/PointingToDeclaration/app/com.example.catfacts.data/-cashing-fact-repository/insert-favorite-fact.html
+$dokka.location:com.example.catfacts.data/DefaultAppContainer///PointingToDeclaration/app/com.example.catfacts.data/-default-app-container/index.html
+$dokka.location:com.example.catfacts.data/DefaultAppContainer/DefaultAppContainer/#android.content.Context/PointingToDeclaration/app/com.example.catfacts.data/-default-app-container/-default-app-container.html
+$dokka.location:com.example.catfacts.data/DefaultAppContainer/factRepository/#/PointingToDeclaration/app/com.example.catfacts.data/-default-app-container/fact-repository.html
+$dokka.location:com.example.catfacts.data/Fact///PointingToDeclaration/app/com.example.catfacts.data/-fact/index.html
+$dokka.location:com.example.catfacts.data/Fact/Fact/#kotlin.String#kotlin.Boolean/PointingToDeclaration/app/com.example.catfacts.data/-fact/-fact.html
+$dokka.location:com.example.catfacts.data/Fact/content/#/PointingToDeclaration/app/com.example.catfacts.data/-fact/content.html
+$dokka.location:com.example.catfacts.data/Fact/isFavorite/#/PointingToDeclaration/app/com.example.catfacts.data/-fact/is-favorite.html
+$dokka.location:com.example.catfacts.data/FactRepository///PointingToDeclaration/app/com.example.catfacts.data/-fact-repository/index.html
+$dokka.location:com.example.catfacts.data/FactRepository/deleteFavoriteFact/#com.example.catfacts.data.Fact/PointingToDeclaration/app/com.example.catfacts.data/-fact-repository/delete-favorite-fact.html
+$dokka.location:com.example.catfacts.data/FactRepository/getFavoriteFacts/#/PointingToDeclaration/app/com.example.catfacts.data/-fact-repository/get-favorite-facts.html
+$dokka.location:com.example.catfacts.data/FactRepository/getRandomFact/#/PointingToDeclaration/app/com.example.catfacts.data/-fact-repository/get-random-fact.html
+$dokka.location:com.example.catfacts.data/FactRepository/insertFavoriteFact/#com.example.catfacts.data.Fact/PointingToDeclaration/app/com.example.catfacts.data/-fact-repository/insert-favorite-fact.html
+$dokka.location:com.example.catfacts.network.facts////PointingToDeclaration/app/com.example.catfacts.network.facts/index.html
+$dokka.location:com.example.catfacts.network.facts/ApiFacts///PointingToDeclaration/app/com.example.catfacts.network.facts/-api-facts/index.html
+$dokka.location:com.example.catfacts.network.facts/ApiFacts/ApiFacts/#kotlin.collections.List[kotlin.String]/PointingToDeclaration/app/com.example.catfacts.network.facts/-api-facts/-api-facts.html
+$dokka.location:com.example.catfacts.network.facts/ApiFacts/facts/#/PointingToDeclaration/app/com.example.catfacts.network.facts/-api-facts/facts.html
+$dokka.location:com.example.catfacts.network.facts/FactsApiService///PointingToDeclaration/app/com.example.catfacts.network.facts/-facts-api-service/index.html
+$dokka.location:com.example.catfacts.network.facts/FactsApiService/getFacts/#/PointingToDeclaration/app/com.example.catfacts.network.facts/-facts-api-service/get-facts.html
+$dokka.location:com.example.catfacts.network////PointingToDeclaration/app/com.example.catfacts.network/index.html
+$dokka.location:com.example.catfacts.network/NetworkConnectionInterceptor///PointingToDeclaration/app/com.example.catfacts.network/-network-connection-interceptor/index.html
+$dokka.location:com.example.catfacts.network/NetworkConnectionInterceptor/NetworkConnectionInterceptor/#android.content.Context/PointingToDeclaration/app/com.example.catfacts.network/-network-connection-interceptor/-network-connection-interceptor.html
+$dokka.location:com.example.catfacts.network/NetworkConnectionInterceptor/context/#/PointingToDeclaration/app/com.example.catfacts.network/-network-connection-interceptor/context.html
+$dokka.location:com.example.catfacts.network/NetworkConnectionInterceptor/intercept/#okhttp3.Interceptor.Chain/PointingToDeclaration/app/com.example.catfacts.network/-network-connection-interceptor/intercept.html
+$dokka.location:com.example.catfacts.network/NetworkConnectionInterceptor/isConnected/#android.content.Context/PointingToDeclaration/app/com.example.catfacts.network/-network-connection-interceptor/is-connected.html
+$dokka.location:com.example.catfacts.ui.favorite////PointingToDeclaration/app/com.example.catfacts.ui.favorite/index.html
+$dokka.location:com.example.catfacts.ui.favorite//FavoriteCard/#com.example.catfacts.data.Fact#kotlin.Function1[com.example.catfacts.data.Fact,kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.favorite/-favorite-card.html
+$dokka.location:com.example.catfacts.ui.favorite//FavoriteList/#kotlin.collections.List[com.example.catfacts.data.Fact]#kotlin.Function1[com.example.catfacts.data.Fact,kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.favorite/-favorite-list.html
+$dokka.location:com.example.catfacts.ui.favorite//FavoritePage/#/PointingToDeclaration/app/com.example.catfacts.ui.favorite/-favorite-page.html
+$dokka.location:com.example.catfacts.ui.home////PointingToDeclaration/app/com.example.catfacts.ui.home/index.html
+$dokka.location:com.example.catfacts.ui.home//FactCard/#com.example.catfacts.data.Fact#kotlin.Function1[com.example.catfacts.data.Fact,kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.home/-fact-card.html
+$dokka.location:com.example.catfacts.ui.home//Home/#/PointingToDeclaration/app/com.example.catfacts.ui.home/-home.html
+$dokka.location:com.example.catfacts.ui.home//RandomFactList/#kotlin.collections.List[com.example.catfacts.data.Fact]#kotlin.Function1[com.example.catfacts.data.Fact,kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.home/-random-fact-list.html
+$dokka.location:com.example.catfacts.ui.mainLayout////PointingToDeclaration/app/com.example.catfacts.ui.mainLayout/index.html
+$dokka.location:com.example.catfacts.ui.mainLayout//CatBottomAppBar/#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.mainLayout/-cat-bottom-app-bar.html
+$dokka.location:com.example.catfacts.ui.mainLayout//CatNavigationRail/#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.mainLayout/-cat-navigation-rail.html
+$dokka.location:com.example.catfacts.ui.mainLayout//CatTopAppBar/#/PointingToDeclaration/app/com.example.catfacts.ui.mainLayout/-cat-top-app-bar.html
+$dokka.location:com.example.catfacts.ui.shared////PointingToDeclaration/app/com.example.catfacts.ui.shared/index.html
+$dokka.location:com.example.catfacts.ui.shared//CatElevatedCard/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-cat-elevated-card.html
+$dokka.location:com.example.catfacts.ui.shared//FavoriteIcon/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-favorite-icon.html
+$dokka.location:com.example.catfacts.ui.shared//RemoveIcon/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-remove-icon.html
+$dokka.location:com.example.catfacts.ui.shared//UnFavoriteIcon/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-un-favorite-icon.html
+$dokka.location:com.example.catfacts.ui.states////PointingToDeclaration/app/com.example.catfacts.ui.states/index.html
+$dokka.location:com.example.catfacts.ui.states/FactApiState.Error///PointingToDeclaration/app/com.example.catfacts.ui.states/-fact-api-state/-error/index.html
+$dokka.location:com.example.catfacts.ui.states/FactApiState.Loading///PointingToDeclaration/app/com.example.catfacts.ui.states/-fact-api-state/-loading/index.html
+$dokka.location:com.example.catfacts.ui.states/FactApiState.NoInternet///PointingToDeclaration/app/com.example.catfacts.ui.states/-fact-api-state/-no-internet/index.html
+$dokka.location:com.example.catfacts.ui.states/FactApiState.Success///PointingToDeclaration/app/com.example.catfacts.ui.states/-fact-api-state/-success/index.html
+$dokka.location:com.example.catfacts.ui.states/FactApiState///PointingToDeclaration/app/com.example.catfacts.ui.states/-fact-api-state/index.html
+$dokka.location:com.example.catfacts.ui.theme////PointingToDeclaration/app/com.example.catfacts.ui.theme/index.html
+$dokka.location:com.example.catfacts.ui.theme//Pink40/#/PointingToDeclaration/app/com.example.catfacts.ui.theme/-pink40.html
+$dokka.location:com.example.catfacts.ui.theme//Pink80/#/PointingToDeclaration/app/com.example.catfacts.ui.theme/-pink80.html
+$dokka.location:com.example.catfacts.ui.theme//Purple40/#/PointingToDeclaration/app/com.example.catfacts.ui.theme/-purple40.html
+$dokka.location:com.example.catfacts.ui.theme//Purple80/#/PointingToDeclaration/app/com.example.catfacts.ui.theme/-purple80.html
+$dokka.location:com.example.catfacts.ui.theme//PurpleGrey40/#/PointingToDeclaration/app/com.example.catfacts.ui.theme/-purple-grey40.html
+$dokka.location:com.example.catfacts.ui.theme//PurpleGrey80/#/PointingToDeclaration/app/com.example.catfacts.ui.theme/-purple-grey80.html
+$dokka.location:com.example.catfacts.ui.theme//TestTheme/#kotlin.Boolean#kotlin.Boolean#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.theme/-test-theme.html
+$dokka.location:com.example.catfacts.ui.theme//Typography/#/PointingToDeclaration/app/com.example.catfacts.ui.theme/-typography.html
+$dokka.location:com.example.catfacts.ui.util////PointingToDeclaration/app/com.example.catfacts.ui.util/index.html
+$dokka.location:com.example.catfacts.ui.util/TaskNavigationType.BOTTOM_NAVIGATION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.catfacts.ui.util/-task-navigation-type/-b-o-t-t-o-m_-n-a-v-i-g-a-t-i-o-n/index.html
+$dokka.location:com.example.catfacts.ui.util/TaskNavigationType.NAVIGATION_RAIL///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.catfacts.ui.util/-task-navigation-type/-n-a-v-i-g-a-t-i-o-n_-r-a-i-l/index.html
+$dokka.location:com.example.catfacts.ui.util/TaskNavigationType.PERMANENT_NAVIGATION_DRAWER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.catfacts.ui.util/-task-navigation-type/-p-e-r-m-a-n-e-n-t_-n-a-v-i-g-a-t-i-o-n_-d-r-a-w-e-r/index.html
+$dokka.location:com.example.catfacts.ui.util/TaskNavigationType///PointingToDeclaration/app/com.example.catfacts.ui.util/-task-navigation-type/index.html
+$dokka.location:com.example.catfacts.ui.util/TaskNavigationType/entries/#/PointingToDeclaration/app/com.example.catfacts.ui.util/-task-navigation-type/entries.html
+$dokka.location:com.example.catfacts.ui.util/TaskNavigationType/valueOf/#kotlin.String/PointingToDeclaration/app/com.example.catfacts.ui.util/-task-navigation-type/value-of.html
+$dokka.location:com.example.catfacts.ui.util/TaskNavigationType/values/#/PointingToDeclaration/app/com.example.catfacts.ui.util/-task-navigation-type/values.html
+$dokka.location:com.example.catfacts.ui////PointingToDeclaration/app/com.example.catfacts.ui/index.html
+$dokka.location:com.example.catfacts.ui//MainView/#com.example.catfacts.ui.util.TaskNavigationType#androidx.navigation.NavHostController/PointingToDeclaration/app/com.example.catfacts.ui/-main-view.html
+$dokka.location:com.example.catfacts.ui/Destinations.Favorite///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.catfacts.ui/-destinations/-favorite/index.html
+$dokka.location:com.example.catfacts.ui/Destinations.Home///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.catfacts.ui/-destinations/-home/index.html
+$dokka.location:com.example.catfacts.ui/Destinations///PointingToDeclaration/app/com.example.catfacts.ui/-destinations/index.html
+$dokka.location:com.example.catfacts.ui/Destinations/entries/#/PointingToDeclaration/app/com.example.catfacts.ui/-destinations/entries.html
+$dokka.location:com.example.catfacts.ui/Destinations/valueOf/#kotlin.String/PointingToDeclaration/app/com.example.catfacts.ui/-destinations/value-of.html
+$dokka.location:com.example.catfacts.ui/Destinations/values/#/PointingToDeclaration/app/com.example.catfacts.ui/-destinations/values.html
+$dokka.location:com.example.catfacts.viewmodels////PointingToDeclaration/app/com.example.catfacts.viewmodels/index.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel.Companion///PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/-companion/index.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel.Companion/Factory/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/-companion/-factory.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel///PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/index.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel/FactViewModel/#com.example.catfacts.data.FactRepository/PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/-fact-view-model.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel/addFavorite/#com.example.catfacts.data.Fact/PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/add-favorite.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel/apiState/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/api-state.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel/getApiFact/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/get-api-fact.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel/listOfFacts/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/list-of-facts.html
+$dokka.location:com.example.catfacts.viewmodels/FactViewModel/removeFavorite/#com.example.catfacts.data.Fact/PointingToDeclaration/app/com.example.catfacts.viewmodels/-fact-view-model/remove-favorite.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel.Companion///PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/-companion/index.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel.Companion/Factory/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/-companion/-factory.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel///PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/index.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel/FavoriteFactViewModel/#com.example.catfacts.data.FactRepository/PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/-favorite-fact-view-model.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel/apiState/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/api-state.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel/getFavoriteFacts/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/get-favorite-facts.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel/removeFavorite/#com.example.catfacts.data.Fact/PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/remove-favorite.html
+$dokka.location:com.example.catfacts.viewmodels/FavoriteFactViewModel/uiListState/#/PointingToDeclaration/app/com.example.catfacts.viewmodels/-favorite-fact-view-model/ui-list-state.html
+$dokka.location:com.example.catfacts////PointingToDeclaration/app/com.example.catfacts/index.html
+$dokka.location:com.example.catfacts/CatsApplication///PointingToDeclaration/app/com.example.catfacts/-cats-application/index.html
+$dokka.location:com.example.catfacts/CatsApplication/CatsApplication/#/PointingToDeclaration/app/com.example.catfacts/-cats-application/-cats-application.html
+$dokka.location:com.example.catfacts/CatsApplication/container/#/PointingToDeclaration/app/com.example.catfacts/-cats-application/container.html
+$dokka.location:com.example.catfacts/CatsApplication/onCreate/#/PointingToDeclaration/app/com.example.catfacts/-cats-application/on-create.html
+$dokka.location:com.example.catfacts/MainActivity///PointingToDeclaration/app/com.example.catfacts/-main-activity/index.html
+$dokka.location:com.example.catfacts/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.catfacts/-main-activity/-main-activity.html
+com.example.catfacts
+com.example.catfacts.data
+com.example.catfacts.data.database
+com.example.catfacts.network
+com.example.catfacts.network.facts
+com.example.catfacts.ui
+com.example.catfacts.ui.favorite
+com.example.catfacts.ui.home
+com.example.catfacts.ui.mainLayout
+com.example.catfacts.ui.shared
+com.example.catfacts.ui.states
+com.example.catfacts.ui.theme
+com.example.catfacts.ui.util
+com.example.catfacts.viewmodels
+
