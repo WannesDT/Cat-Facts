@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.catfacts.data.Fact
 import com.example.catfacts.ui.shared.CatElevatedCard
@@ -31,7 +32,7 @@ fun FavoriteCard(fact: Fact, onRemoveCLicked: (Fact) -> Unit) {
             horizontalArrangement = Arrangement.End,
             modifier = Modifier.fillMaxWidth(),
         ) {
-            RemoveIcon { onRemoveCLicked(fact) }
+            RemoveIcon(modifier = Modifier.testTag(fact.content)) { onRemoveCLicked(fact) }
         }
     }
 }

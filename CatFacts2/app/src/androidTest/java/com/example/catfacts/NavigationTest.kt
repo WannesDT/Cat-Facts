@@ -64,7 +64,7 @@ class NavigationTest {
 
     @OptIn(ExperimentalTestApi::class)
     @Test
-    fun addNextFactDisplayed() = run {
+    fun addNextFactDisplayed(): Unit = run {
         goToHome()
         composeTestRule
             .waitUntilExactlyOneExists(hasText("next fact"))

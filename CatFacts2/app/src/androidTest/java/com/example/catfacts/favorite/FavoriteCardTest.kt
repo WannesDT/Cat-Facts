@@ -1,18 +1,16 @@
-package com.example.catfacts
+package com.example.catfacts.favorite
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import com.example.catfacts.data.Fact
-import com.example.catfacts.ui.favorite.FavoriteList
+import com.example.catfacts.ui.favorite.FavoriteCard
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class FavoriteListTest {
-    private val fact1 = Fact("fact1")
-    private val fact2 = Fact("fact2")
-    private val someFacts = listOf(fact1, fact2)
+class FavoriteCardTest {
+    private val fact = Fact("fact1")
 
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -20,18 +18,14 @@ class FavoriteListTest {
     @Before
     fun init() {
         composeTestRule.setContent {
-            FavoriteList(factsList = someFacts, onRemoveCLicked = {})
+            FavoriteCard(fact = fact, onRemoveCLicked = {})
         }
     }
 
     @Test
-    fun areAllItemsDisplayed() {
+    fun isFactDisplayed() {
         composeTestRule
-            .onNodeWithText(fact1.content)
-            .assertIsDisplayed()
-
-        composeTestRule
-            .onNodeWithText(fact2.content)
+            .onNodeWithText(fact.content)
             .assertIsDisplayed()
     }
 }

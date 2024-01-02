@@ -9,6 +9,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.catfacts.R
@@ -19,8 +20,8 @@ import com.example.catfacts.R
  * @param onClick The callback function triggered when the delete icon is clicked.
  */
 @Composable
-fun RemoveIcon(onClick: () -> Unit) {
-    IconButton(onClick = onClick) {
+fun RemoveIcon(modifier: Modifier = Modifier, onClick: () -> Unit) {
+    IconButton(onClick = onClick, modifier = modifier) {
         Icon(
             Icons.Default.Delete,
             contentDescription = stringResource(R.string.icon_delete_description),
@@ -36,7 +37,7 @@ fun RemoveIcon(onClick: () -> Unit) {
  */
 @Composable
 fun UnFavoriteIcon(onClick: () -> Unit) {
-    IconButton(onClick = onClick) {
+    IconButton(onClick = onClick, modifier = Modifier.testTag("unfavorite")) {
         Icon(
             Icons.Default.Favorite,
             contentDescription = stringResource(R.string.icon_delete_description),
@@ -52,7 +53,7 @@ fun UnFavoriteIcon(onClick: () -> Unit) {
  */
 @Composable
 fun FavoriteIcon(onClick: () -> Unit) {
-    IconButton(onClick = onClick) {
+    IconButton(onClick = onClick, Modifier.testTag("favorite")) {
         Icon(
             Icons.Default.FavoriteBorder,
             contentDescription = stringResource(R.string.icon_favorite_description),

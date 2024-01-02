@@ -2,10 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="FactDaoTest">
+      <entry key="FactCardTest">
+        <State />
+      </entry>
+      <entry key="FavoriteCardTest">
         <State />
       </entry>
       <entry key="FavoriteListTest">
+        <State />
+      </entry>
+      <entry key="FavoriteListTest (1)">
         <State />
       </entry>
       <entry key="NavigationTest">
