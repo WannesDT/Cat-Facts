@@ -20,6 +20,9 @@ You can find documentation [here](https://wannesdt.github.io/Cat-Facts/)
 - Android device running Android 7.0 (API level 24) or above.
 - Internet connection for fetching random cat facts.
 
+## Api used
+For this app we used [this](https://github.com/wh-iterabb-it/meowfacts) API for retrieving facts about cats.
+
 ## Getting Started
 
 1. Clone the repository:
