@@ -25,7 +25,7 @@ You can find documentation [here](https://wannesdt.github.io/Cat-Facts/)
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/wannesdet/catfact-companion-app.git
+    git clone https://github.com/WannesDT/Cat-Facts.git
     ```
 
 2. Open the project in Android Studio.
