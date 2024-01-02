@@ -19,10 +19,10 @@ class FakeApiFactsRepository : FactRepository {
     }
 
     override suspend fun insertFavoriteFact(fact: Fact) {
-        //
+        // do nothing :)
     }
 
     override suspend fun deleteFavoriteFact(fact: Fact) {
-        TODO("Not yet implemented")
+        // do nothing :)
     }
 }

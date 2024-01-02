@@ -24,15 +24,15 @@ class FactViewModelTest {
     @get:Rule
     val testDispatcher = TestDispatcherRule()
 
-    private fun getFact(): Fact {
-        val thisFact: Fact
+    private fun getFacts(): List<Fact> {
+        val thisFacts: List<Fact>
 
         when (apiState) {
-            is FactApiState.Success -> { thisFact = (apiState as FactApiState.Success).fact }
+            is FactApiState.Success -> { thisFacts = viewModel.listOfFacts }
             else -> { throw AssertionError() }
         }
 
-        return thisFact
+        return thisFacts
     }
 
     @Before
@@ -49,16 +49,16 @@ class FactViewModelTest {
     }
 
     @Test
-    fun getFactTest() {
-        Assert.assertEquals(getFact(), FakeDataSource.fact1)
+    fun getFactsTest() {
+        Assert.assertEquals(getFacts().first(), FakeDataSource.fact1)
     }
 
     @Test
     fun setAndRemoveIsFavorite() {
-        viewModel.addFavorite(getFact())
-        Assert.assertEquals(viewModel.isFavoriteState, true)
-        viewModel.removeFavorite(getFact())
-        Assert.assertEquals(viewModel.isFavoriteState, false)
+        viewModel.addFavorite(getFacts().first())
+        Assert.assertEquals(getFacts().first().isFavorite, true)
+        viewModel.removeFavorite(getFacts().first())
+        Assert.assertEquals(getFacts().first().isFavorite, false)
     }
 }
 
