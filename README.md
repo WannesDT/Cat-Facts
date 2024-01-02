@@ -1,8 +1,8 @@
-# CatFact Companion App - Jetpack Compose
+# CatFact App - Jetpack Compose
 
 ## Overview
 
-Welcome to the CatFact App, a Jetpack Compose application developed by Wannes De Tollenaere for the Mobile Application Development course (Android) in Group G2A2. This app provides a delightful experience for cat lovers by fetching random cat facts and allowing users to save their favorite cat facts for later.
+Welcome to the CatFact App, a Jetpack Compose application developed by Wannes De Tollenaere for the Mobile Application Development course (Android) in Group G3A2. This app provides a delightful experience for cat lovers by fetching random cat facts and allowing users to save their favorite cat facts for later.
 
 ## Features
 
@@ -50,10 +50,7 @@ If you'd like to contribute to the project, please follow these guidelines:
 ## Credits
 
 - Wannes De Tollenaere
-- Group G2A2
+- Group G3A2
 
-
-# Cat-Facts
-cat facts
 
 
