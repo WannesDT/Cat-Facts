@@ -51,7 +51,6 @@ class DefaultAppContainer(applicationContext: Context) : AppContainer {
     // Uncomment the line below for local emulator testing.
     // private val baseUrl = "http://10.0.2.2:3000"
 
-
     // Retrofit instance for making API calls.
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
