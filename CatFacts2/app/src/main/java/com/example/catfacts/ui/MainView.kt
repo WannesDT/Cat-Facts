@@ -56,7 +56,18 @@ fun MainView(
             },
             bottomBar = {
                 CatBottomAppBar(
-                    showHomePage = { if (canNavigate(currentBackStack, Destinations.Home.name)) navController.navigate(Destinations.Home.name) },
+                    showHomePage = {
+                        if (canNavigate(currentBackStack, Destinations.Home.name)) {
+                            navController.navigate(Destinations.Home.name) {
+                                popUpTo(Destinations.Home.name) {
+                                    // inclusive zorgt ervoor dat de homepage zelf niet meegepopped word
+                                    inclusive = false
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
+                    },
                     showFavoritePage = { if (canNavigate(currentBackStack, Destinations.Favorite.name)) navController.navigate(Destinations.Favorite.name) },
                 )
             },
@@ -86,7 +97,18 @@ fun MainView(
         Row {
             AnimatedVisibility(visible = navigationType == TaskNavigationType.NAVIGATION_RAIL) {
                 CatNavigationRail(
-                    showHomePage = { if (canNavigate(currentBackStack, Destinations.Home.name)) navController.navigate(Destinations.Home.name) },
+                    showHomePage = {
+                        if (canNavigate(currentBackStack, Destinations.Home.name)) {
+                            navController.navigate(Destinations.Home.name) {
+                                popUpTo(Destinations.Home.name) {
+                                    // inclusive zorgt ervoor dat de homepage zelf niet meegepopped word
+                                    inclusive = false
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
+                    },
                     showFavoritePage = { if (canNavigate(currentBackStack, Destinations.Favorite.name)) navController.navigate(Destinations.Favorite.name) },
                 )
             }
