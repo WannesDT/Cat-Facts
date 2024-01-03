@@ -29,7 +29,7 @@ class FactListTest {
     @Before
     fun init() {
         composeTestRule.setContent {
-            RandomFactList(listOfFacts = someFacts) {}
+            RandomFactList(listOfFacts = someFacts, {})
         }
     }
 
