@@ -16,12 +16,18 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+/**
+ * Test class for navigation within the Compose UI using [ComposeNavigator].
+ */
 class NavigationTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
     lateinit var navController: TestNavHostController
 
+    /**
+     * Set up the Compose UI with a test navigation host controller and the [MainView].
+     */
     @Before
     fun setupAppNavHost() {
         composeTestRule.setContent {
@@ -34,12 +40,18 @@ class NavigationTest {
         }
     }
 
+    /**
+     * Perform the navigation action to go to the Home destination.
+     */
     private fun goToHome() {
         composeTestRule
             .onNodeWithContentDescription("ga naar Home")
             .performClick()
     }
 
+    /**
+     * Perform the navigation action to go to the Favorite destination.
+     */
     private fun goToFavorite() {
         // R.string.appbar_icon_favorite_description
         composeTestRule
@@ -47,6 +59,9 @@ class NavigationTest {
             .performClick()
     }
 
+    /**
+     * Test to verify that the start destination is displayed.
+     */
     @Test
     fun verifyStartDestination() {
         composeTestRule
@@ -54,6 +69,9 @@ class NavigationTest {
             .assertIsDisplayed()
     }
 
+    /**
+     * Test navigation to the Favorites destination and verify if the title is displayed.
+     */
     @Test
     fun navigateToFavorites() {
         goToFavorite()
@@ -62,6 +80,9 @@ class NavigationTest {
             .assertIsDisplayed()
     }
 
+    /**
+     * Test to verify that the "next fact" text is displayed after navigating to the Home destination.
+     */
     @OptIn(ExperimentalTestApi::class)
     @Test
     fun addNextFactDisplayed(): Unit = run {

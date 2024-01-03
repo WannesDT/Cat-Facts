@@ -3,6 +3,7 @@ package com.example.catfacts
 import com.example.catfacts.data.Fact
 import com.example.catfacts.fake.FakeApiFactsRepository
 import com.example.catfacts.fake.FakeDataSource
+import com.example.catfacts.fake.FakeFactsApiService
 import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FactViewModel
 import kotlinx.coroutines.Dispatchers
@@ -17,6 +18,9 @@ import org.junit.Test
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
+/**
+ * Unit tests for [FactViewModel] class.
+ */
 class FactViewModelTest {
     private lateinit var viewModel: FactViewModel
     private lateinit var apiState: FactApiState
@@ -24,6 +28,12 @@ class FactViewModelTest {
     @get:Rule
     val testDispatcher = TestDispatcherRule()
 
+    /**
+     * Retrieves the list of facts based on the current [apiState].
+     * Throws [AssertionError] if [apiState] is not [FactApiState.Success].
+     *
+     * @return The list of facts.
+     */
     private fun getFacts(): List<Fact> {
         val thisFacts: List<Fact>
 
@@ -35,10 +45,13 @@ class FactViewModelTest {
         return thisFacts
     }
 
+    /**
+     * Initializes the [FactViewModel] and sets up the initial [apiState].
+     */
     @Before
     fun init() {
         viewModel = FactViewModel(
-            factRepository = FakeApiFactsRepository(),
+            factRepository = FakeApiFactsRepository(FakeFactsApiService()),
         )
 
         apiState = viewModel.apiState
@@ -48,11 +61,17 @@ class FactViewModelTest {
         }
     }
 
+    /**
+     * Tests the [getFacts] function to ensure it returns the correct list of facts.
+     */
     @Test
     fun getFactsTest() {
         Assert.assertEquals(getFacts().first(), FakeDataSource.fact1)
     }
 
+    /**
+     * Tests the functions to set and remove the "isFavorite" flag for a fact.
+     */
     @Test
     fun setAndRemoveIsFavorite() {
         viewModel.addFavorite(getFacts().first())
@@ -62,14 +81,3 @@ class FactViewModelTest {
     }
 }
 
-class TestDispatcherRule(
-    val testDispatcher: TestDispatcher = UnconfinedTestDispatcher(),
-) : TestWatcher() {
-    override fun starting(description: Description) {
-        Dispatchers.setMain(testDispatcher)
-    }
-
-    override fun finished(description: Description) {
-        Dispatchers.resetMain()
-    }
-}

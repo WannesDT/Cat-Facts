@@ -15,12 +15,18 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+/**
+ * UI test class for the [FactCard] composable.
+ */
 class FactCardTest {
     private var fact by mutableStateOf(Fact("fact1"))
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
+    /**
+     * Set up the test environment by providing the [FactCard] composable with the [fact].
+     */
     @Before
     fun init() {
         composeTestRule.setContent {
@@ -28,6 +34,9 @@ class FactCardTest {
         }
     }
 
+    /**
+     * Test to verify if the displayed content of the FactCard matches the fact's content.
+     */
     @Test
     fun isFactDisplayed() {
         composeTestRule
@@ -35,6 +44,9 @@ class FactCardTest {
             .assertIsDisplayed()
     }
 
+    /**
+     * Test to verify if toggling the favorite icon works as expected.
+     */
     @Test
     fun toggleFavorite() {
         composeTestRule

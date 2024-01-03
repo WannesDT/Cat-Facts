@@ -9,12 +9,18 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+/**
+ * UI test class for the [FavoriteCard] composable.
+ */
 class FavoriteCardTest {
     private val fact = Fact("fact1")
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
+    /**
+     * Set up the test environment by providing the [FavoriteCard] composable with the [fact].
+     */
     @Before
     fun init() {
         composeTestRule.setContent {
@@ -22,6 +28,9 @@ class FavoriteCardTest {
         }
     }
 
+    /**
+     * Test to verify if the displayed content of the FavoriteCard matches the fact's content.
+     */
     @Test
     fun isFactDisplayed() {
         composeTestRule

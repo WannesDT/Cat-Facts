@@ -12,14 +12,20 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+/**
+ * UI test class for the [RandomFactList] composable.
+ */
 class FactListTest {
     private val fact1 = Fact("fact1")
     private val fact2 = Fact("fact2")
-    private var someFacts by mutableStateOf(mutableListOf<Fact>(fact1, fact2))
+    private var someFacts by mutableStateOf(listOf(fact1, fact2))
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
+    /**
+     * Set up the test environment by providing the [RandomFactList] composable with [someFacts].
+     */
     @Before
     fun init() {
         composeTestRule.setContent {
@@ -27,6 +33,9 @@ class FactListTest {
         }
     }
 
+    /**
+     * Test to verify if all items in the RandomFactList are displayed.
+     */
     @Test
     fun areAllItemsDisplayed() {
         composeTestRule

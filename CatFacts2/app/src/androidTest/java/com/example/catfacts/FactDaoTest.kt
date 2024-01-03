@@ -26,20 +26,31 @@ class FactDaoTest {
     private var fact1 = Fact("Cat Fact 1")
     private var fact2 = Fact("Cat Fact 2")
 
-    // unility functions
+    /**
+     * Utility function to add one fact to the database.
+     */
     private suspend fun addOnefactToDb() {
         factDao.insert(fact1.asDbFact())
     }
 
+    /**
+     * Utility function to add two facts to the database.
+     */
     private suspend fun addTwofactsToDb() {
         factDao.insert(fact1.asDbFact())
         factDao.insert(fact2.asDbFact())
     }
 
+    /**
+     * Utility function to remove the first fact from the database.
+     */
     private suspend fun removeFirstFactFromDb() {
         factDao.delete(fact1.asDbFact())
     }
 
+    /**
+     * Set up the in-memory database for testing.
+     */
     @Before
     fun createDb() {
         val context: Context = ApplicationProvider.getApplicationContext()
@@ -52,12 +63,18 @@ class FactDaoTest {
         factDao = catsDatabase.factDao()
     }
 
+    /**
+     * Close the in-memory database after testing.
+     */
     @After
     @Throws(IOException::class)
     fun closeDb() {
         catsDatabase.close()
     }
 
+    /**
+     * Test to verify if inserting one fact into the database works correctly.
+     */
     @Test
     @Throws(Exception::class)
     fun daoInsert_insertfactIntoDB() = runBlocking {
@@ -66,6 +83,9 @@ class FactDaoTest {
         assertEquals(allItems[0].asDomainFact(), fact1)
     }
 
+    /**
+     * Test to verify if retrieving all facts from the database works correctly.
+     */
     @Test
     @Throws(Exception::class)
     fun daoGetAllfacts_returnsAllfactsFromDB() = runBlocking {
@@ -75,6 +95,9 @@ class FactDaoTest {
         assertEquals(allItems[1].asDomainFact(), fact2)
     }
 
+    /**
+     * Test to verify if removing one fact from the database works correctly.
+     */
     @Test
     @Throws(Exception::class)
     fun daoRemoveFact_returnsAllfactsFromDB() = runBlocking {

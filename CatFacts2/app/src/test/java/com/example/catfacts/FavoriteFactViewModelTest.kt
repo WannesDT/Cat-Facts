@@ -1,9 +1,11 @@
 package com.example.catfacts
 
 import com.example.catfacts.data.Fact
+import com.example.catfacts.data.database.asDomainFacts
 import com.example.catfacts.data.toFacts
 import com.example.catfacts.fake.FakeApiFactsRepository
 import com.example.catfacts.fake.FakeDataSource
+import com.example.catfacts.fake.FakeFactsApiService
 import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FavoriteFactViewModel
 import kotlinx.coroutines.flow.first
@@ -21,10 +23,13 @@ class FavoriteFactViewModelTest {
     @get:Rule
     val testDispatcher = TestDispatcherRule()
 
+    /**
+     * Initializes the [FavoriteFactViewModel] and sets up the initial [apiState] and [uiList].
+     */
     @Before
     fun init() = runTest {
         viewModel = FavoriteFactViewModel(
-            factRepository = FakeApiFactsRepository(),
+            factRepository = FakeApiFactsRepository(FakeFactsApiService()),
         )
 
         apiState = viewModel.apiState
@@ -36,8 +41,11 @@ class FavoriteFactViewModelTest {
         }
     }
 
+    /**
+     * Tests the [getFavoriteFactsTest] function to ensure it returns the correct list of favorite facts.
+     */
     @Test
     fun getFavoriteFactsTest() {
-        Assert.assertEquals(uiList, FakeDataSource.favoFacts.facts.toFacts())
+        Assert.assertEquals(uiList, FakeDataSource.favoFacts.asDomainFacts())
     }
 }

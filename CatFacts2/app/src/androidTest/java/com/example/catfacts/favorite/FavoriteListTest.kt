@@ -16,6 +16,9 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+/**
+ * UI test class for the [FavoriteList] composable.
+ */
 class FavoriteListTest {
     private val fact1 = Fact("fact1")
     private val fact2 = Fact("fact2")
@@ -24,6 +27,9 @@ class FavoriteListTest {
     @get:Rule
     val composeTestRule = createComposeRule()
 
+    /**
+     * Set up the test environment by providing the [FavoriteList] composable with [someFacts].
+     */
     @Before
     fun init() {
         composeTestRule.setContent {
@@ -33,10 +39,18 @@ class FavoriteListTest {
         }
     }
 
+    /**
+     * Helper function to remove a fact from the list.
+     *
+     * @param fact The fact to be removed.
+     */
     private fun removeFact(fact: Fact) {
         someFacts = someFacts.filterNot { item -> fact.content == item.content }.toMutableList()
     }
 
+    /**
+     * Test to verify if all items in the FavoriteList are displayed.
+     */
     @Test
     fun areAllItemsDisplayed() {
         composeTestRule
@@ -48,6 +62,9 @@ class FavoriteListTest {
             .assertIsDisplayed()
     }
 
+    /**
+     * Test to verify if a fact is removed from the FavoriteList.
+     */
     @OptIn(ExperimentalTestApi::class)
     @Test
     fun removeFactTest(): Unit = run {

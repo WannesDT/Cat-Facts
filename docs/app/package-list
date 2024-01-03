@@ -66,7 +66,7 @@ $dokka.location:com.example.catfacts.ui.mainLayout//CatTopAppBar/#/PointingToDec
 $dokka.location:com.example.catfacts.ui.shared////PointingToDeclaration/app/com.example.catfacts.ui.shared/index.html
 $dokka.location:com.example.catfacts.ui.shared//CatElevatedCard/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-cat-elevated-card.html
 $dokka.location:com.example.catfacts.ui.shared//FavoriteIcon/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-favorite-icon.html
-$dokka.location:com.example.catfacts.ui.shared//RemoveIcon/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-remove-icon.html
+$dokka.location:com.example.catfacts.ui.shared//RemoveIcon/#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-remove-icon.html
 $dokka.location:com.example.catfacts.ui.shared//UnFavoriteIcon/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.catfacts.ui.shared/-un-favorite-icon.html
 $dokka.location:com.example.catfacts.ui.states////PointingToDeclaration/app/com.example.catfacts.ui.states/index.html
 $dokka.location:com.example.catfacts.ui.states/FactApiState.Error///PointingToDeclaration/app/com.example.catfacts.ui.states/-fact-api-state/-error/index.html
