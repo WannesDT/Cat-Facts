@@ -24,7 +24,7 @@ class FactCardTest {
     @Before
     fun init() {
         composeTestRule.setContent {
-            FactCard(fact = fact, onFavoriteClicked = { fact = Fact(it.content, isFavorite = !it.isFavorite) })
+            FactCard(fact = fact, onFavoriteClicked = { fact = fact.copy(isFavorite = !it.isFavorite) })
         }
     }
 
