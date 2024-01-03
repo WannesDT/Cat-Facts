@@ -20,8 +20,8 @@ import com.example.catfacts.ui.shared.RemoveIcon
  * @param onRemoveCLicked The callback function triggered when the remove icon is clicked.
  */
 @Composable
-fun FavoriteCard(fact: Fact, onRemoveCLicked: (Fact) -> Unit) {
-    CatElevatedCard {
+fun FavoriteCard(fact: Fact, onRemoveCLicked: (Fact) -> Unit, modifier: Modifier = Modifier) {
+    CatElevatedCard(modifier = modifier) {
         Text(
             text = fact.content,
             modifier = Modifier

@@ -20,8 +20,10 @@ import com.example.catfacts.ui.shared.UnFavoriteIcon
  * @param onFavoriteClicked The callback function triggered when the favorite/unfavorite icon is clicked.
  */
 @Composable
-fun FactCard(fact: Fact, onFavoriteClicked: (Fact) -> Unit) {
-    CatElevatedCard {
+fun FactCard(fact: Fact, onFavoriteClicked: (Fact) -> Unit, modifier: Modifier = Modifier) {
+    CatElevatedCard(
+        modifier = modifier,
+    ) {
         Text(
             text = fact.content,
             modifier = Modifier

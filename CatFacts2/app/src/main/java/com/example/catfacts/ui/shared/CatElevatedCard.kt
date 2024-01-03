@@ -17,9 +17,9 @@ import androidx.compose.ui.unit.dp
  * @param content The content to be displayed inside the elevated card.
  */
 @Composable
-fun CatElevatedCard(content: @Composable () -> Unit) {
+fun CatElevatedCard(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
     ElevatedCard(
-        modifier = Modifier
+        modifier = modifier
             .padding(10.dp)
             .fillMaxWidth()
             .wrapContentHeight()

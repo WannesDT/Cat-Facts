@@ -33,9 +33,9 @@ class FavoriteListTest {
     @Before
     fun init() {
         composeTestRule.setContent {
-            FavoriteList(factsList = someFacts) { fact ->
+            FavoriteList(factsList = someFacts, onRemoveCLicked = { fact ->
                 removeFact(fact)
-            }
+            })
         }
     }
 

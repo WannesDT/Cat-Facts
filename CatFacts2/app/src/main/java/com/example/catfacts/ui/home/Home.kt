@@ -9,10 +9,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -24,6 +27,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.catfacts.R
 import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FactViewModel
+import kotlinx.coroutines.launch
 
 /**
  * Composable function to display the home screen.
@@ -79,9 +83,15 @@ private fun homeScreenContent() {
             }
 
             is FactApiState.Success -> {
-                val listOfFacts = factViewModel.listOfFacts.reversed()
+                val listOfFacts = factViewModel.listOfFacts.reversed().toSet().toList()
+                val listOfOnlyContent = listOfFacts.map { it.content }
+                val listState = rememberLazyListState()
 
-                RandomFactList(listOfFacts = listOfFacts) { if (it.isFavorite) factViewModel.removeFavorite(it) else factViewModel.addFavorite(it) }
+                LaunchedEffect(listOfOnlyContent) {
+                    listState.animateScrollToItem(index = 0)
+                }
+
+                RandomFactList(listOfFacts = listOfFacts, onFavoriteClicked = { if (it.isFavorite) factViewModel.removeFavorite(it) else factViewModel.addFavorite(it) }, listState = listState)
 
                 Spacer(Modifier.weight(1f))
 
