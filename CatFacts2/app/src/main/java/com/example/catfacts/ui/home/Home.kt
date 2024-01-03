@@ -15,7 +15,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -27,7 +26,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.catfacts.R
 import com.example.catfacts.ui.states.FactApiState
 import com.example.catfacts.viewmodels.FactViewModel
-import kotlinx.coroutines.launch
 
 /**
  * Composable function to display the home screen.
