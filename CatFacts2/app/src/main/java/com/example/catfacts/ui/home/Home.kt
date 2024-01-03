@@ -81,11 +81,11 @@ private fun homeScreenContent() {
             }
 
             is FactApiState.Success -> {
-                val listOfFacts = factViewModel.listOfFacts.reversed().toSet().toList()
-                val listOfOnlyContent = listOfFacts.map { it.content }
+                val listOfFacts = factViewModel.listOfFacts.reversed()
+                val listOfOnlyUID = listOfFacts.map { it.UID }
                 val listState = rememberLazyListState()
 
-                LaunchedEffect(listOfOnlyContent) {
+                LaunchedEffect(listOfOnlyUID) {
                     listState.animateScrollToItem(index = 0)
                 }
 

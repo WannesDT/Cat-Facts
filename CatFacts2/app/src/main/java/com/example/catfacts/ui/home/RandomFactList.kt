@@ -28,7 +28,7 @@ fun RandomFactList(listOfFacts: List<Fact>, onFavoriteClicked: (Fact) -> Unit, l
     LazyColumn(state = listState, modifier = Modifier.fillMaxHeight(0.85f).animateContentSize()) {
         itemsIndexed(
             items = listOfFacts,
-            key = { _, fact -> fact.content },
+            key = { _, fact -> fact.UID },
         ) { _, fact ->
 
             FactCard(

@@ -1,12 +1,20 @@
 package com.example.catfacts.data
 
+import java.util.UUID
+
 /**
  * Data class representing a fact with content and a favorite status.
  *
  * @param content The content of the fact.
  * @param isFavorite Indicates whether the fact is marked as a favorite (default is false).
  */
-data class Fact(val content: String, val isFavorite: Boolean = false)
+data class Fact(val content: String, val isFavorite: Boolean = false, val UID: String = generateId()) {
+    companion object {
+        private fun generateId(): String {
+            return UUID.randomUUID().toString()
+        }
+    }
+}
 
 /**
  * Extension function to convert a [String] into a [Fact].
