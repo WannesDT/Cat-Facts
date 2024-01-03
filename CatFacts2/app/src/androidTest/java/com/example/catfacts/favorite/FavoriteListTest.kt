@@ -19,7 +19,7 @@ import org.junit.Test
 class FavoriteListTest {
     private val fact1 = Fact("fact1")
     private val fact2 = Fact("fact2")
-    private var someFacts by mutableStateOf(mutableListOf<Fact>(fact1, fact2))
+    private var someFacts by mutableStateOf(listOf(fact1, fact2))
 
     @get:Rule
     val composeTestRule = createComposeRule()
